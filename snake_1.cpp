@@ -20,9 +20,9 @@ int end=0;
 int st=0;//开始方向 
 char ch;//用来交换 
 int dead=0;//判断是否撞墙 
-char key;
-int app;
-int score=0;
+char key;//按键 
+int app;//是否生成新果子 
+int score=0;//得分 
 int t=0;
 char play=' ';
 void print()
