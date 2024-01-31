@@ -12,17 +12,17 @@ using namespace std;
 int fps=60;
 char a[maxn][maxn];
 int s[4][2]={-1,0,1,0,0,-1,0,1};
-int x1=5,y1=5;//¹û×Ó×ø±ê 
+int x1=5,y1=5;//æœå­åæ ‡ 
 int x[10000];
 int y[10000];
 int top=1;
-int end=0;
-int st=0;//¿ªÊ¼·½Ïò 
-char ch;//ÓÃÀ´½»»» 
-int dead=0;//ÅĞ¶ÏÊÇ·ñ×²Ç½ 
-char key;//°´¼ü 
-int app;//ÊÇ·ñÉú³ÉĞÂ¹û×Ó 
-int score=0;//µÃ·Ö 
+int tail=0;
+int st=0;//å¼€å§‹æ–¹å‘ 
+char ch;//ç”¨æ¥äº¤æ¢ 
+int dead=0;//åˆ¤æ–­æ˜¯å¦æ’å¢™ 
+char key;//æŒ‰é”® 
+int app;//æ˜¯å¦ç”Ÿæˆæ–°æœå­ 
+int score=0;//å¾—åˆ† 
 int t=0;
 char play=' ';
 void print()
@@ -62,8 +62,8 @@ void move()
             top++;
 		    x[top]+=s[st][0];
 		    y[top]+=s[st][1];
-            a[x[end]][y[end]]=' ';
-            end++;
+            a[x[tail]][y[tail]]=' ';
+            tail++;
         }
 	}
 	else
@@ -120,7 +120,7 @@ int main()
 		}
 		st=0;
 		top=1;
-		end=0;
+		tail=0;
     	score=0;
     	dead=0;
     	x[0]=11;
@@ -147,7 +147,7 @@ int main()
 	    a[11][10]='@' ;
     	play='a';
     	print();
-   	 	printf("°´ÈÎÒâ½¨¿ªÊ¼ÓÎÏ·"); 
+   	 	printf("æŒ‰ä»»æ„å»ºå¼€å§‹æ¸¸æˆ"); 
     	_getch();
     	system("cls");
 		while(1)
@@ -176,16 +176,16 @@ int main()
 		}
 		if(score<10)
 		{
-			printf("²Å%d·Ö£¬²Ë¼¦",score);
+			printf("æ‰%dåˆ†ï¼Œèœé¸¡",score);
 		}
 		else
 		{
-			printf("ÄãµÃÁË%d·Ö",score);
+			printf("ä½ å¾—äº†%dåˆ†",score);
 		}
-		printf("\n°´ÈÎÒâ¼ü½áÊø±¾¾Ö"); 
+		printf("\næŒ‰ä»»æ„é”®ç»“æŸæœ¬å±€"); 
 		_getch(); 
 		system("cls");
-		printf("°´¿Õ¸ñ¿ªÊ¼ĞÂÓÎÏ·"); 
+		printf("æŒ‰ç©ºæ ¼å¼€å§‹æ–°æ¸¸æˆ"); 
 		//system ("pause");
 		play=_getch();
 		system("cls");
